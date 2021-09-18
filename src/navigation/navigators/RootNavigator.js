@@ -1,9 +1,8 @@
 import React from 'react';
 import HomeScreen from '../../screens/Home';
-// import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createDrawerNavigator } from '@react-navigation/drawer';
+import DestinationScreen from '../../screens/Destination';
 
-// const Stack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
 
 const RootNavigator = () => {
@@ -15,8 +14,13 @@ const RootNavigator = () => {
         };
       }}
     >
-      <Drawer.Screen name="Home" component={HomeScreen} />
-      <Drawer.Screen name="Profile" component={HomeScreen} />
+      <Drawer.Group>
+        <Drawer.Screen name="Home" component={HomeScreen} />
+        <Drawer.Screen name="Profile" component={HomeScreen} />
+      </Drawer.Group>
+      <Drawer.Group screenOptions={{ presentation: 'modal' }}>
+        <Drawer.Screen name="Destination" component={DestinationScreen} />
+      </Drawer.Group>
     </Drawer.Navigator>
   );
 };
