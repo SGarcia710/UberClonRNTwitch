@@ -10,9 +10,10 @@ import {
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
 import { StatusBar } from 'expo-status-bar';
+import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplete';
 
 import { scale } from '../commons/utils';
-
+const PLACES_API_KEY = 'AIzaSyCSnUQhzenNAlO5NJcQb2GBlNqtwZxp2Bc';
 const DestinationScreen = ({ navigation }) => {
   return (
     <SafeAreaView style={styles.container}>
@@ -60,6 +61,30 @@ const DestinationScreen = ({ navigation }) => {
           />
         </View>
         <View>
+          {/* <GooglePlacesAutocomplete
+            placeholder="Search"
+            onPress={(data, details = null) => {
+              console.log(data, details);
+            }}
+            query={{
+              key: PLACES_API_KEY,
+              language: 'en',
+            }}
+            styles={{
+              container: {
+                zIndex: 99,
+                position: 'absolute',
+              },
+              textInputContainer: {
+                ...styles.input,
+                backgroundColor: 'transparent',
+              },
+              textInput: {
+                ...styles.input,
+              },
+              predefinedPlacesDescription: {},
+            }}
+          /> */}
           <TextInput style={styles.input} placeholder="From" />
 
           <View

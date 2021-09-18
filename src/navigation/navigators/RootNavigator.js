@@ -14,12 +14,12 @@ const RootNavigator = () => {
         };
       }}
     >
+      <Drawer.Group screenOptions={{ presentation: 'modal' }}>
+        <Drawer.Screen name="Destination" component={DestinationScreen} />
+      </Drawer.Group>
       <Drawer.Group>
         <Drawer.Screen name="Home" component={HomeScreen} />
         <Drawer.Screen name="Profile" component={HomeScreen} />
-      </Drawer.Group>
-      <Drawer.Group screenOptions={{ presentation: 'modal' }}>
-        <Drawer.Screen name="Destination" component={DestinationScreen} />
       </Drawer.Group>
     </Drawer.Navigator>
   );
